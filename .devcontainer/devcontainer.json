@@ -1,27 +1,41 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-  // Name this configuration
-  "name": "Codespace for Skills!",
-  // Use the base codespace image
-  "image": "mcr.microsoft.com/vscode/devcontainers/universal:latest",
+	"name": "Codespace for Python 3 development",
+	"image": "mcr.microsoft.com/devcontainers/python:latest",
 
-  "remoteUser": "codespace",
-  "overrideCommand": false
-  
- ,
- // Add the IDs of extensions you want installed when the container is created.
- "customizations": {
-     "vscode": {
-         "extensions": [
-             "GitHub.copilot"
-         ]
-     },
-     "codespaces": {
-         "openFiles": [
-             "codespace.md"
-         ]
-     }
- }
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
 
- ,
- "postCreateCommand": "echo '# Writing code upon codespace creation!'  >> codespace.md"
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"ms-python.python",
+        "GitHub.copilot",
+        "janisdd.vscode-edit-csv"
+			]
+		}
+	},
+	
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [9000],
+
+	// Use 'portsAttributes' to set default properties for specific forwarded ports. 
+	// More info: https://containers.dev/implementors/json_reference/#port-attributes
+	"portsAttributes": {
+		"9000": {
+			"label": "Hello Remote World",
+			"onAutoForward": "notify"
+		}
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+  // Uncomment if want to use
+	// "postCreateCommand": "pip3 install -r requirements.txt"
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
