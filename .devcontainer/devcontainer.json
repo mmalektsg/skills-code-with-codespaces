@@ -14,8 +14,8 @@
 			"settings": {},
 			"extensions": [
 				"ms-python.python",
-        "GitHub.copilot",
-        "janisdd.vscode-edit-csv"
+        			"GitHub.copilot",
+        			"janisdd.vscode-edit-csv"
 			]
 		}
 	},
